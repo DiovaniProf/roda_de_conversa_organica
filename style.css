@@ -1,0 +1,177 @@
+
+:root{font-family:Inter,system-ui,Arial,sans-serif;color:#fff;background:#0b1d26}*{box-sizing:border-box}body{margin:0}.app{max-width:1700px;margin:auto;padding:12px}.stage{position:relative;aspect-ratio:1672/941;border-radius:20px;overflow:hidden;background-image:url("./RODA.jpg");background-size:100% 100%;box-shadow:0 12px 55px #000a;isolation:isolate}.stage::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#071c2cb0 0%,transparent 23%,transparent 65%,#0b1f2cc9 100%);pointer-events:none;z-index:1}.top{position:absolute;z-index:4;top:2%;left:2.5%;background:#0c2834e8;border:1px solid #ffffffa1;backdrop-filter:blur(10px);padding:12px 18px;border-radius:13px}.top h1{font-size:clamp(17px,2.2vw,34px);margin:0}.top p{font-size:clamp(11px,1vw,16px);margin:4px 0 0;color:#c2e3e3}.wheel{position:absolute;left:35%;top:28%;width:30%;aspect-ratio:1;border-radius:50%;background-image:none;background-repeat:no-repeat;box-shadow:0 0 0 4px #eedaa78c,0 0 0 11px #091e24ae,0 12px 30px #0006;will-change:transform;transition:transform 2.1s cubic-bezier(.15,.7,.13,1);z-index:2}.wheel:after{content:'';position:absolute;inset:0;border:3px solid #d2ae60;border-radius:50%;pointer-events:none}.person{position:absolute;z-index:3;transform:translate(-50%,-50%);width:clamp(32px,3.8vw,62px);height:clamp(32px,3.8vw,62px);border:2px solid white;border-radius:50%;background:#061a22ed;color:white;font-size:clamp(15px,1.7vw,27px);font-weight:800;cursor:pointer;box-shadow:0 4px 18px #0008}.person:hover,.person.active{background:#ecc87f;color:#102831;border-color:#102831;box-shadow:0 0 0 5px #fff8,0 4px 18px #0009}.p1{left:70%;top:17%}.p2{left:90%;top:43%}.p3{left:84%;top:83%}.p4{left:17%;top:82%}.p5{left:9%;top:48%}.p6{left:33%;top:14%}.footer{position:absolute;z-index:4;bottom:2.2%;left:2%;right:2%;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px}.footer button,.close,.save{background:#07141ff2;color:white;border:2px solid white;border-radius:11px;padding:11px 16px;font-weight:750;font-size:clamp(12px,1vw,17px);cursor:pointer}.footer button:hover,.save:hover{background:#19475b}.footer .gold{background:#ddbf82;color:#102735;border-color:#fff}.counter{padding:8px 12px;background:#07141fcf;border-radius:10px;font-size:clamp(11px,1vw,16px)}.panel{position:fixed;inset:0;background:#05131ce8;display:none;z-index:10;align-items:center;justify-content:center;padding:18px}.panel.open{display:flex}.sheet{width:min(850px,96vw);max-height:94vh;overflow:auto;background:#102b36;border:1px solid #648691;border-radius:18px;padding:clamp(20px,4vw,45px);box-shadow:0 30px 70px #000a}.sheet-head{display:flex;justify-content:space-between;align-items:center;gap:18px}.sheet h2{font-size:clamp(26px,3vw,45px);margin:0}.subtitle{color:#b7d4d6;font-size:clamp(17px,1.6vw,22px)}.sheet label{display:block;font-weight:750;margin:24px 0 8px;font-size:20px}.sheet textarea{width:100%;min-height:180px;border:1px solid #7d9fa8;border-radius:12px;padding:18px;font:inherit;font-size:19px;resize:vertical}.note{font-size:14px;color:#bad8d4}.sheet .save{margin-top:15px;background:#dbbd7c;color:#0c2331}.legend{font-size:12px;color:#bde0d8;text-align:center;margin-top:8px}@media(max-width:800px){.stage{aspect-ratio:4/5;background-size:cover;background-position:center}.wheel{left:30%;top:39%;width:40%}.p1{left:70%;top:31%}.p2{left:90%;top:49%}.p3{left:80%;top:73%}.p4{left:20%;top:73%}.p5{left:9%;top:50%}.p6{left:30%;top:30%}.top{left:3%;right:3%;top:2%}.footer{gap:5px}.footer button{padding:8px}.counter{display:none}}
+
+/* Versão 2 · dinâmica de formação orgânica */
+.wheel{background-image:none!important;background-color:#4e3022!important;background:radial-gradient(circle at 37% 28%,#896243 0%,#65432d 40%,#38251d 78%,#291b16 100%)!important;box-shadow:inset 0 0 0 8px #b99866,inset 0 0 0 14px #2b1a13,0 8px 24px #0009!important;display:grid;place-items:center;transition:transform 1.7s cubic-bezier(.12,.77,.17,1)!important;}
+.wheel-arrow{width:66%;height:66%;filter:drop-shadow(0 4px 3px #0008)}
+.wheel:after{inset:3%;border:2px solid #ead6a174!important}
+.person{opacity:0!important;pointer-events:none!important;box-shadow:none!important;}
+.footer button:disabled{opacity:.48;cursor:not-allowed;filter:grayscale(.8)}
+.top{max-width:55%;}.top p{font-size:clamp(12px,1.2vw,20px)}
+.counter{font-weight:700;background:#07141fe8;border:1px solid #ffffff66}
+@media(max-width:800px){.top{max-width:74%}.footer{bottom:1%;}.wheel{width:40%!important}}
+
+/* V3: roda central vinho-bordô lisa, com aro e seta integralmente brancos. */
+.wheel{
+  left:35%!important; top:28%!important; width:30%!important;
+  border:7px solid #ffffff!important;
+  background:#77162a!important;
+  background-image:none!important;
+  box-shadow: inset 0 0 0 3px #ffffff35, 0 9px 26px #1208119e!important;
+  overflow:hidden;
+}
+.wheel:after{inset:0!important;border:0!important;box-shadow:inset 0 0 0 2px #ffffff70;}
+.wheel-arrow{width:70%;height:70%;filter:drop-shadow(0 2px 2px #240712a8)!important;}
+@media (max-width:800px){.wheel{left:30%!important;top:39%!important;width:40%!important}}
+
+/* Avaliação formativa baseada no feedback II */
+.criteria-title{font-size:clamp(19px,2vw,29px);margin:18px 0 12px;color:#e8c787}
+.criteria{display:grid;gap:12px}
+.criterion{display:flex!important;align-items:flex-start;gap:16px;background:#ffffff12;border:1px solid #ffffff2d;border-left:4px solid #e4c887;border-radius:11px;padding:16px 18px;color:#fff;line-height:1.42;font-size:clamp(16px,1.4vw,22px);cursor:pointer}
+.criterion input{flex:none;width:25px;height:25px;accent-color:#c4e9d5;margin:1px 0 0}
+.panel .sheet{max-height:90vh;overflow-y:auto}
+.panel .note{margin-top:14px}
+@media(max-width:700px){.criterion{padding:12px;font-size:16px}.criterion input{width:22px;height:22px}}
+
+/* V5 — disco vinho-bordô com aro branco e seta em relevo */
+.wheel{border:6px solid #fff!important;background:radial-gradient(circle at 38% 28%,#a73753 0%,#8c1d39 38%,#660b24 78%,#560a1e 100%)!important;
+box-shadow:inset 0 0 0 3px #ffffff44,inset 0 -14px 30px #22020b80,0 0 0 3px #4b1c22,0 10px 26px #000b!important;}
+.wheel:after{inset:2%!important;border:2px solid #ffffff99!important;box-shadow:inset 0 0 9px #ffffff30!important;}
+.wheel-arrow{width:78%!important;height:78%!important;filter:drop-shadow(0 3px 2px #250410b3)!important;}
+.footer button.export-word{background:#112a3b!important;border:2px solid #fff!important;color:#fff!important;font-weight:750!important;}
+.footer button.export-word:hover{background:#1b4258!important;}
+@media(max-width:700px){.footer{flex-wrap:wrap!important;gap:7px!important}.footer button{font-size:12px!important;padding:9px!important}}
+
+/* V6 — Disco metálico compacto: vinho-bordô, aro branco e seta branca */
+.wheel{
+ left:38%!important;
+ top:31%!important;
+ width:24%!important;
+ background-image:
+  radial-gradient(circle at 34% 25%,rgba(255,255,255,.24),transparent 44%),
+  repeating-conic-gradient(from 12deg,rgba(255,255,255,.035) 0deg 1deg,rgba(0,0,0,.035) 1deg 2deg,transparent 2deg 4deg),
+  radial-gradient(circle at 52% 48%,#a72041 0%,#8d1533 47%,#690c27 83%,#420a1a 100%)!important;
+ background-size:cover!important;
+ border:5px solid #f8f8f7!important;
+ box-shadow:inset 0 0 0 2px #6d2635,inset 0 3px 25px #2d0617,0 0 0 2px #6a4c45,0 8px 20px #0007!important;
+}
+.wheel:after{content:none!important;}
+.wheel-arrow{width:68%;height:68%;filter:drop-shadow(0 3px 2px #2406129c)!important;}
+
+
+
+/* V7 — disco estilo vinil premium */
+.wheel{
+  left:36.5%!important;
+  top:29.5%!important;
+  width:27%!important;
+  aspect-ratio:1;
+  border-radius:50%;
+  border:8px solid #f4f3f1!important;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.12) 0%, rgba(255,255,255,0) 34%),
+    radial-gradient(circle at 35% 28%, rgba(255,255,255,.14) 0%, rgba(255,255,255,0) 19%),
+    repeating-radial-gradient(circle at 50% 50%, #8f1538 0 2px, #861233 2px 4px, #7c0f2f 4px 6px, #7a0f2e 6px 8px),
+    radial-gradient(circle at 50% 44%, #a01a42 0%, #891437 34%, #73102d 62%, #5c0c24 82%, #45081a 100%)!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.38),
+    inset 0 0 0 2px rgba(255,255,255,.14),
+    inset 0 -14px 28px rgba(44,6,18,.32),
+    0 10px 26px rgba(10,0,5,.40)!important;
+  overflow:hidden;
+}
+.wheel::before{
+  content:'';
+  position:absolute;
+  inset:2.4%;
+  border-radius:50%;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.18), rgba(255,255,255,0) 26%, rgba(255,255,255,0) 70%, rgba(0,0,0,.08)),
+    radial-gradient(circle at 52% 56%, rgba(0,0,0,0) 0 58%, rgba(255,255,255,.08) 63%, rgba(255,255,255,0) 70%);
+  pointer-events:none;
+}
+.wheel::after{
+  content:'';
+  position:absolute;
+  inset:0!important;
+  border:0!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.22), inset 0 0 18px rgba(255,255,255,.06);
+  border-radius:50%;
+}
+.wheel-arrow{
+  position:absolute;
+  inset:0;
+  width:100%!important;
+  height:100%!important;
+  filter:none!important;
+}
+@media (max-width:800px){
+  .wheel{left:31%!important;top:39%!important;width:38%!important;}
+}
+
+
+
+/* V8 — disco metálico premium com flecha menor */
+.wheel{
+  left:36.7%!important;
+  top:29.6%!important;
+  width:26.6%!important;
+  aspect-ratio:1;
+  border-radius:50%;
+  border:8px solid #f7f4f2!important;
+  background:
+    radial-gradient(circle at 32% 26%, rgba(255,255,255,.24) 0%, rgba(255,255,255,0) 18%),
+    radial-gradient(circle at 68% 76%, rgba(0,0,0,.14) 0%, rgba(0,0,0,0) 34%),
+    repeating-radial-gradient(circle at 50% 50%, rgba(255,255,255,.032) 0 2px, rgba(255,255,255,0) 2px 5px),
+    linear-gradient(145deg, #ae214a 0%, #96183f 20%, #821136 40%, #731030 60%, #8a1740 78%, #661028 100%)!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.42),
+    inset 0 -18px 28px rgba(46,5,16,.28),
+    inset 0 0 0 2px rgba(255,255,255,.10),
+    0 10px 26px rgba(10,0,5,.38)!important;
+  overflow:hidden;
+}
+.wheel::before{
+  content:'';
+  position:absolute;
+  inset:2%;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0) 0 60%, rgba(255,255,255,.06) 62%, rgba(255,255,255,0) 70%),
+    linear-gradient(140deg, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 28%, rgba(255,255,255,0) 72%, rgba(0,0,0,.08) 100%);
+  pointer-events:none;
+}
+.wheel::after{
+  content:'';
+  position:absolute;
+  inset:0!important;
+  border:0!important;
+  border-radius:50%;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.22), inset 0 0 20px rgba(255,255,255,.05);
+}
+.wheel-arrow{
+  position:absolute;
+  inset:0;
+  width:100%!important;
+  height:100%!important;
+  filter:none!important;
+}
+@media (max-width:800px){
+  .wheel{left:31%!important;top:39.2%!important;width:37%!important;}
+}
+
+
+/* Metas da formadora — versão da síntese coletiva do painel da ponte */
+.footer{gap:9px!important;flex-wrap:wrap!important;justify-content:center!important}
+.footer button,.footer .counter{white-space:normal;text-align:center}
+.goals-sheet{max-width:900px;width:min(90vw,900px)}
+.goals-fields{display:grid;gap:18px;margin:24px 0}
+.goals-fields label{display:flex;flex-direction:column;gap:8px;font-weight:700;font-size:clamp(19px,1.8vw,27px)}
+.goals-fields input{border-radius:10px;border:1px solid #c6ddd8;background:#f9fdfb;color:#142934;padding:14px 17px;font:inherit;font-size:clamp(17px,1.3vw,23px);width:100%}
+.goals-fields input:focus-visible{outline:3px solid #e8c787}
+.micro-ending{font-size:22px;font-weight:700;color:#f7e6ba}
+.goals-quote{background:#ffffff13;border-left:4px solid #e8c787;padding:20px;border-radius:9px;font-size:clamp(17px,1.4vw,23px);line-height:1.5;margin:20px 0}
+
+/* V11 — cabeçalho alinhado às margens superior e esquerda da imagem */
+.stage .top{top:0!important;left:0!important;right:auto!important;margin:0!important;border-top-left-radius:0!important;border-bottom-left-radius:0!important;max-width:min(78%,680px)!important;}
+@media(max-width:800px){.stage .top{top:0!important;left:0!important;right:auto!important;max-width:86%!important;}}
