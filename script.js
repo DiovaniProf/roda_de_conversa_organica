@@ -183,3 +183,20 @@ function exportDocx(){
  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),5000);
 }
 document.getElementById('export').addEventListener('click',exportDocx);
+
+
+/* Tela cheia nativa: tecla Esc encerra; fallback oferece expansão no navegador. */
+const fullscreenButton=document.getElementById('fullscreen');
+const fullscreenStage=document.getElementById('stage');
+fullscreenButton.addEventListener('click',async()=>{
+ try{
+  if(document.fullscreenElement){await document.exitFullscreen();}
+  else if(fullscreenStage.requestFullscreen){await fullscreenStage.requestFullscreen();}
+  else {fullscreenStage.classList.toggle('fullscreen-fallback');}
+ }catch(e){fullscreenStage.classList.toggle('fullscreen-fallback');}
+});
+document.addEventListener('fullscreenchange',()=>{
+ const active=!!document.fullscreenElement;
+ fullscreenButton.textContent=active?'⛶ Sair da tela cheia':'⛶ Tela cheia';
+ fullscreenButton.setAttribute('aria-pressed',String(active));
+});
