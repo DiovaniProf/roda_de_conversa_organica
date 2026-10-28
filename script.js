@@ -194,9 +194,14 @@ fullscreenButton.addEventListener('click',async()=>{
   else if(fullscreenStage.requestFullscreen){await fullscreenStage.requestFullscreen();}
   else {fullscreenStage.classList.toggle('fullscreen-fallback');}
  }catch(e){fullscreenStage.classList.toggle('fullscreen-fallback');}
+ const active=!!document.fullscreenElement||fullscreenStage.classList.contains('fullscreen-fallback');
+ fullscreenButton.setAttribute('aria-label',active?'Sair da tela cheia':'Entrar em tela cheia');
+ fullscreenButton.title=active?'Sair da tela cheia':'Entrar em tela cheia';
+ fullscreenButton.setAttribute('aria-pressed',String(active));
 });
 document.addEventListener('fullscreenchange',()=>{
  const active=!!document.fullscreenElement;
- fullscreenButton.textContent=active?'⛶ Sair da tela cheia':'⛶ Tela cheia';
+ fullscreenButton.setAttribute('aria-label',active?'Sair da tela cheia':'Entrar em tela cheia');
+ fullscreenButton.title=active?'Sair da tela cheia':'Entrar em tela cheia';
  fullscreenButton.setAttribute('aria-pressed',String(active));
 });

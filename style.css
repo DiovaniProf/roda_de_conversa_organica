@@ -190,3 +190,9 @@ html,body{min-height:100%;}
 
 .stage.fullscreen-fallback{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;aspect-ratio:auto!important;z-index:100!important;border-radius:0!important;background-size:100% 100%!important;}
 .stage.fullscreen-fallback .wheel{left:36.7%!important;top:29.6%!important;width:26.6%!important;}
+
+/* V13: botão azul-néon de tela cheia no canto superior direito */
+.fullscreen-neon{position:absolute;top:clamp(10px,1.5vw,23px);right:clamp(10px,1.5vw,23px);z-index:15;display:grid;place-items:center;width:clamp(44px,4.1vw,64px);height:clamp(44px,4.1vw,64px);border:2px solid #38e9ff;border-radius:13px;background:rgba(3,19,32,.85);color:#43e9ff;box-shadow:0 0 18px #00cbff80,inset 0 0 13px #007aab50;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+.fullscreen-neon svg{width:58%;height:58%;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.fullscreen-neon:hover,.fullscreen-neon:focus-visible{transform:scale(1.07);background:#062e44;box-shadow:0 0 28px #00dfff,0 0 4px #e5ffff;outline:0}
+.fullscreen-neon[aria-pressed="true"]{color:white;border-color:white;box-shadow:0 0 18px #00dfff}
