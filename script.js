@@ -86,12 +86,13 @@ function openNote(){
  });
  document.getElementById('saved').textContent='';
  panel.classList.add('open');
+ document.getElementById('close').focus({preventScroll:true});
 }
 document.getElementById('rotate').addEventListener('click',spin);
 document.getElementById('reset').addEventListener('click',reset);
 document.getElementById('record').addEventListener('click',openNote);
 document.getElementById('record').disabled=true;
-document.getElementById('close').onclick=()=>panel.classList.remove('open');
+document.getElementById('close').onclick=()=>{panel.classList.remove('open');document.getElementById('record').focus({preventScroll:true});};
 document.getElementById('save').onclick=()=>{if(selected===null)return;const checked=[...criteriaBox.querySelectorAll('input:checked')].map(el=>Number(el.value));localStorage.setItem(key(selected),JSON.stringify(checked));document.getElementById('saved').textContent='Avaliação salva neste dispositivo.';};
 panel.addEventListener('click',e=>{if(e.target===panel)panel.classList.remove('open')});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')panel.classList.remove('open')});
@@ -117,8 +118,8 @@ const goalsInputs=[document.getElementById('goalPreserve'),document.getElementBy
 const goalsKey='roda_organica_metas_formadora_v1';
 function loadGoals(){try{const data=JSON.parse(localStorage.getItem(goalsKey)||'[]');goalsInputs.forEach((input,i)=>input.value=String(data[i]||''));}catch(e){goalsInputs.forEach(input=>input.value='');}}
 function saveGoals(){localStorage.setItem(goalsKey,JSON.stringify(goalsInputs.map(input=>input.value.trim())));document.getElementById('goalsSaved').textContent='Metas salvas neste navegador.';}
-document.getElementById('goals').addEventListener('click',()=>{loadGoals();document.getElementById('goalsSaved').textContent='';goalsPanel.classList.add('open');});
-document.getElementById('goalsClose').addEventListener('click',()=>goalsPanel.classList.remove('open'));
+document.getElementById('goals').addEventListener('click',()=>{loadGoals();document.getElementById('goalsSaved').textContent='';goalsPanel.classList.add('open');document.getElementById('goalsClose').focus({preventScroll:true});});
+document.getElementById('goalsClose').addEventListener('click',()=>{goalsPanel.classList.remove('open');document.getElementById('goals').focus({preventScroll:true});});
 document.getElementById('goalsSave').addEventListener('click',saveGoals);
 goalsPanel.addEventListener('click',e=>{if(e.target===goalsPanel)goalsPanel.classList.remove('open');});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')goalsPanel.classList.remove('open');});
@@ -185,7 +186,7 @@ function exportDocx(){
 document.getElementById('export').addEventListener('click',exportDocx);
 
 
-/* Tela cheia nativa: tecla Esc encerra; fallback oferece expansão no navegador. */
+/* Tela cheia V14: registros e metas são descendentes do stage, permanecendo visíveis sem Esc. */
 const fullscreenButton=document.getElementById('fullscreen');
 const fullscreenStage=document.getElementById('stage');
 fullscreenButton.addEventListener('click',async()=>{

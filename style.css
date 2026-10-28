@@ -196,3 +196,51 @@ html,body{min-height:100%;}
 .fullscreen-neon svg{width:58%;height:58%;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 .fullscreen-neon:hover,.fullscreen-neon:focus-visible{transform:scale(1.07);background:#062e44;box-shadow:0 0 28px #00dfff,0 0 4px #e5ffff;outline:0}
 .fullscreen-neon[aria-pressed="true"]{color:white;border-color:white;box-shadow:0 0 18px #00dfff}
+
+
+/* V14 — os registros ficam dentro do palco fullscreen, como uma tela integral.
+   Ao fechar, retorna à roda SEM alterar o estado de tela cheia. */
+.stage > .panel{
+  position:absolute !important;
+  inset:0 !important;
+  z-index:40 !important;
+  width:100%;height:100%;
+  padding:0 !important;
+  background:#071d2d;
+  align-items:stretch;justify-content:stretch;
+  overflow:hidden;
+}
+.stage > .panel.open{display:flex !important}
+.stage > .panel .sheet{
+  box-sizing:border-box;
+  display:flex;flex-direction:column;
+  width:100%;height:100%;min-height:0;max-height:none !important;
+  overflow-y:auto;overscroll-behavior:contain;
+  border:0;border-radius:0;box-shadow:none;
+  padding:clamp(22px,3.8vw,64px) clamp(20px,6vw,100px);
+  background:radial-gradient(ellipse at 90% 5%,#1d4960 0%,transparent 50%),
+             linear-gradient(145deg,#0c2937 0%,#0a1e2c 100%);
+  scrollbar-color:#5b8a9e #102b36;
+}
+.stage > .panel .sheet > *{width:min(1180px,100%);margin-left:auto;margin-right:auto}
+.stage > .panel .sheet-head{gap:22px;padding-bottom:clamp(12px,1.6vw,24px);border-bottom:1px solid #ffffff42}
+.stage > .panel .sheet h2{font-size:clamp(24px,2.7vw,46px);line-height:1.16}
+.stage > .panel .sheet .close{flex:none;font-size:clamp(13px,1vw,18px);border-color:#6fdef5;background:#102f42;box-shadow:0 0 14px #00cbff29}
+.stage > .panel .sheet .close:hover,.stage > .panel .sheet .close:focus-visible{background:#20556a;outline:2px solid #75edff}
+.stage > .panel .subtitle{font-size:clamp(17px,1.5vw,23px);line-height:1.45;margin-top:clamp(16px,2vh,28px);margin-bottom:clamp(8px,1.6vh,18px)}
+.stage > .panel .criteria-title{font-size:clamp(21px,2vw,32px);margin-top:clamp(10px,2vh,24px);margin-bottom:clamp(12px,1.6vh,20px)}
+.stage > .panel .criteria{display:grid;gap:clamp(12px,1.6vh,22px)}
+.stage > .panel .criteria .criterion{margin:0!important;padding:clamp(15px,1.55vw,23px);font-size:clamp(17px,1.32vw,23px);min-height:64px;align-items:center}
+.stage > .panel .note{font-size:clamp(14px,1vw,17px);margin-top:clamp(16px,2vh,24px)}
+.stage > .panel .save{align-self:center;width:min(1180px,100%);font-size:clamp(17px,1.3vw,22px);padding:16px 22px;margin-top:clamp(14px,2vh,22px)}
+.stage > .panel #saved,.stage > .panel #goalsSaved{font-size:clamp(15px,1vw,19px);min-height:1.2em}
+.stage > .panel .goals-fields{display:grid;gap:clamp(10px,2vh,22px)}
+.stage > .panel .goals-fields label{margin:0}
+.stage > .panel .goals-quote{margin-top:clamp(16px,2vh,26px);margin-bottom:clamp(12px,1.6vh,20px)}
+.stage > .panel .goals-fields input{margin-top:8px}
+@media(max-width:700px){
+  .stage > .panel .sheet{padding:20px 14px 28px}
+  .stage > .panel .sheet-head{align-items:flex-start}
+  .stage > .panel .sheet .close{padding:10px 12px;white-space:normal}
+  .stage > .panel .criteria .criterion{padding:12px;font-size:16px}
+}
